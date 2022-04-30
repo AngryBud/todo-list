@@ -1,38 +1,73 @@
 .App {
   text-align: center;
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header{
+  width:100vw;
+  height: 10vh;
+  font-size: 4rem;
+  padding: 2rem 6rem;
   display: flex;
-  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
+  border-bottom: 1px solid rgb(186, 180, 180);
+  color:#5C48D3;
+}
+.header span{
+  margin-left: 2rem;
+  color: black;
+  font-size: 3rem;
+}
+
+.addBar{
+  border: 2px solid blue;
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  align-items: center;
+  /* padding-top: 4rem; */
+  /* margin-top: 2rem; */
+}
+#myForm{
+  border: 2px solid red;
+  width: 70%;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  /* display: flex; */
+  margin-top: 15rem;
 }
 
-.App-link {
-  color: #61dafb;
+.taskAdded{
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid green;
+  width: 40%;
+  margin-top: 5rem; 
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.hide{
+  visibility:hidden;
+}
+
+#inputTask{
+  border: 1px solid #5C48D3;
+  justify-content: flex-start;
+  border-radius: 10px;
+  margin-right: 2rem;
+  width: 40%;
+  height : 3rem;
+  outline: none;
+}
+
+button{
+  width: 10%;
+  height: 100%;
+  border-radius: 10px;
+  background-color: #5C48D3;
+  /* margin-left: 4rem; */
 }
