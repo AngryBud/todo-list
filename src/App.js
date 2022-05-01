@@ -9,7 +9,7 @@ function App() {
   const [value, setValue] = useState();
   // var check = document.getElementById("inputCheck");
   // var message = document.getElementById("task");
-  // let inputCheck = false;
+  let inputCheck = false;
   // let checked = false;
 
   const handleChange = (e) =>{
