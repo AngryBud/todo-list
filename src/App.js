@@ -9,12 +9,14 @@ function App() {
   const [value, setValue] = useState();
   // var check = document.getElementById("inputCheck");
   // var message = document.getElementById("task");
-  let inputCheck = false;
+  // let inputCheck = false;
   // let checked = false;
 
   const handleChange = (e) =>{
-    inputCheck = true;
-    setValue(e.target.value);
+    // if (!inputCheck){
+      // inputCheck = true;
+      setValue(e.target.value);
+    // }
   }
 
 
@@ -42,7 +44,7 @@ function App() {
         <Header/>
         <div className='allContent'>
           <form id="myForm">                                
-            <input id="inputTask" placeholder= "New Task" onChange={handleChange} maxLength={40}></input>
+            <input id="inputTask" placeholder= "New Task" onChange={handleChange} minLength={5} maxLength={40}></input>
             <button type="submit" onClick={handleClick}>Add Task</button>
           </form>
           <ol className='allTasks'>
