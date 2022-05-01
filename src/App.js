@@ -1,16 +1,16 @@
 import './App.css';
 import Header from "./components/Header";
 import {useState} from "react";
-import Task from "./components/Task";
+// import Task from "./components/Task";
 import {FaTrash} from "react-icons/fa";
 
 function App() {
   const [task, setTask] = useState([]);
   const [value, setValue] = useState();
-  var check = document.getElementById("inputCheck");
-  var message = document.getElementById("task");
-  let inputCheck = false;
-  let checked = false;
+  // var check = document.getElementById("inputCheck");
+  // var message = document.getElementById("task");
+  // let inputCheck = false;
+  // let checked = false;
 
   const handleChange = (e) =>{
     inputCheck = true;
@@ -23,7 +23,7 @@ function App() {
     if (task.length === 14){
         alert("Limite des 14 task atteinte.... on attends la v2");
       }
-    if (value != undefined){
+    if (value !== undefined){
       let obj = {value, completed:false};
 
       const newTab = [...task];
