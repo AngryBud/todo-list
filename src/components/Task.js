@@ -1,40 +1,23 @@
-import {FaTrash} from "react-icons/fa";
+import {FaTrash} from "react-icons/fa"; /*import icon*/
 
-const Tasks = (props) => {
-    const {index, t, task} = props;
-    // console.log("check :: 1", check.check);
-    var checked = false;
-
-    const isCheck = () => {
-        var box = document.getElementById('inputCheck');
-        var text = document.getElementsByClassName('font-task');
-        // console.log(box);
-        // if (box.checked == false)
-        // {}
-        // inputCheck = true
-        // console.log("check :: 1", checked);
-        //     // {!checked ? true : false}; 
-        //     if (checked === true){
-        //         checked = false;
-        //     }
-        //     else{
-        //         checked = true;
-        //         document.getElementByClassName('font-task').style.textDecoration="line-through";
-        //     }
-
-        // }
-            
-        console.log("chacked :: 2", box.checked);
-        // if (checked === true)
-        //     checked = false;
-        // checked = true;
-    } 
-    
-    return  <div key={index} className= 'taskAdded'>
-                <input id="inputCheck"  type="checkbox" onClick={isCheck}></input>
-                <span className="font-task">{t}</span>
-                <FaTrash/>
-            </div>;
+const Tasks = ({handleCheck, handleTrash, task}) => {
+    /*return de notre liste*/
+    return  <ol className='allTasks'>
+                {/* limite de 14 task en v1 */}
+                <div className={task.length <= 14 ?'columnTasks' : 'columnTasks more'}>
+                {task.map((t, index) =>{ /*on map su rnos task*/
+                // et on return nos element de liste
+                return  <li key={index} className= 'taskAdded'> 
+                            {/* on check a chaque changement en modifiant la key completed de l'objet a l'index */}
+                            <input id="inputCheck"  type="checkbox" onChange={()=>handleCheck(index)}/>
+                            {/* completed a true ou a false ? barré ou pas */}
+                            <span style={{textDecorationLine: t.completed && 'line-through'}} id={"font-task"}>{t.title}</span>
+                        {/* notre icon relié a remove */}
+                        <button id="trash" onClick={handleTrash}><FaTrash/></button>
+                        </li>
+                })}
+                </div>
+            </ol>
 }
 
 export default Tasks;
